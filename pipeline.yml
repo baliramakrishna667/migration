@@ -1,0 +1,24 @@
+name: Sample Pipeline Job Migration
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Hello Stage
+        run: echo "Hello World"
+
+      - name: Whoami
+        run: whoami
+
+      - name: Print Workspace
+        run: pwd
+

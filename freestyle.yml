@@ -1,0 +1,24 @@
+name: Sample Freestyle Job Migration
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # allows manual trigger
+
+jobs:
+  freestyle-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print Working Directory
+        run: pwd
+
+      - name: Show Current User
+        run: whoami
+
+      - name: Echo a Message
+        run: echo "This is my freestyle job - started by user Ram"
+
